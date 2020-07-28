@@ -60,17 +60,19 @@ def ConstructGeoClauses(geoDict):
     States -> {'state':[Washington,Florida]}
     Counties -> {'county':{Washington:[Snohomish,King,Pierce],Florida:[Brevard]}}
     Tracts -> {'tract':{Washington:{Snohomish:[Tract #'s],King:[Tract #'s],Pierce:[Tract #'s]},Florida:{Brevard:[Tract #'s]}}}'''
-    GEOCODE = {'state':1,'county':2,'tract':3,r'block%20group':4}
-    INVGEOCODE = {1:'state',2:'county',3:'tract',4:r'block%20group'}
+    
+    GEOCODE = {'state':'1_a','county':'2_a','tract':'3_a',r'county%20subdivision':'3_b',r'block%20group':'4_a'}
+    INVGEOCODE = {'1_a':'state','2_a':'county','3_a':'tract','3_b':r'county%20subdivision','4_a':r'block%20group'}
     geoClauseList = []
 
-    def iterFunc(geostage,subStruct,curstage=0,state=None,subClause=None):
+    def iterFunc(geocode,subStruct,curstage=0,state=None,subClause=None):
+        geostage = int(geocode.split('_')[0])
         curstage = geostage if curstage == 0 else curstage
         
         if curstage == 1:
             for item in subStruct:
                 if item != r'*':
-                    mainClause = f'{INVGEOCODE[geostage]}:{getFipsCode(INVGEOCODE[geostage],item,dictNm=state)}'
+                    mainClause = f'{INVGEOCODE[geocode]}:{getFipsCode(INVGEOCODE[geocode],item,dictNm=state)}'
                 else:
                     mainClause = fr'{geogLev}:*'
 
@@ -82,14 +84,14 @@ def ConstructGeoClauses(geoDict):
             for geogNm,subStruct1 in subStruct.items():
                 thisState = geogNm if geostage-curstage == 1 else state
                 subClause = '' if (geostage - curstage == 1) else r'&'.join(subClause.split('&')[0:(geostage-curstage)])
-                inClause = fr'&in={INVGEOCODE[geostage-curstage]}:{getFipsCode(INVGEOCODE[geostage-curstage],geogNm,dictNm=state)}'
+                inClause = fr'&in={INVGEOCODE[(str(geostage-curstage)+'_a')]}:{getFipsCode(INVGEOCODE[(str(geostage-curstage)+'_a')],geogNm,dictNm=state)}'
                 subClause = subClause + inClause if subClause else inClause
                 
                 iterFunc(geostage,subStruct1,curstage=curstage,state=thisState,subClause=subClause)
 
     for geogLev,subStruct in geoDict.items():
-        geostage = GEOCODE[geogLev]
-        iterFunc(geostage,subStruct)
+        geocode = GEOCODE[geogLev]
+        iterFunc(geocode,subStruct)
 
     return geoClauseList
 
