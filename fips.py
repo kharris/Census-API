@@ -11,7 +11,7 @@ STATE = {'minnesota':'27','mississippi':'28','missouri':'29','montana':'30','neb
 'michigan':'26'}
 
 
-ALABAMA_COUNTY = {'monroe':'099','lawrence':'079','lee':'081','pickens':'107','sumter':'119','choctaw':'023',
+COUNTY = {'ALABAMA':{'monroe':'099','lawrence':'079','lee':'081','pickens':'107','sumter':'119','choctaw':'023',
 'marengo':'091','russell':'113','covington':'039','crenshaw':'041','lauderdale':'077',
 'lowndes':'085','limestone':'083','st. clair':'115','winston':'133','cullman':'043',
 'elmore':'051','jackson':'071','talladega':'121','washington':'129','coffee':'031',
@@ -24,9 +24,8 @@ ALABAMA_COUNTY = {'monroe':'099','lawrence':'079','lee':'081','pickens':'107','s
 'houston':'069','tuscaloosa':'125','clay':'027','pike':'109','coosa':'037',
 'hale':'065','escambia':'053','butler':'013','perry':'105','conecuh':'035',
 'bibb':'007','chambers':'017','fayette':'057','blount':'009','autauga':'001',
-'geneva':'061'}
-
-MINNESOTA_COUNTY = {'cottonwood':'033','scott':'139','dodge':'039','wabasha':'157','pipestone':'117','crow wing':'035',
+'geneva':'061'},
+          'MINNESOTA':{'cottonwood':'033','scott':'139','dodge':'039','wabasha':'157','pipestone':'117','crow wing':'035',
 'norman':'107','wright':'171','nicollet':'103','douglas':'041','grant':'051',
 'kittson':'069','le sueur':'079','mahnomen':'087','chisago':'025','redwood':'127',
 'yellow medicine':'173','todd':'153','beltrami':'007','blue earth':'013','houston':'055',
@@ -43,9 +42,8 @@ MINNESOTA_COUNTY = {'cottonwood':'033','scott':'139','dodge':'039','wabasha':'15
 'wilkin':'167','clay':'027','fillmore':'045','polk':'119','roseau':'135',
 'watonwan':'165','big stone':'011','cass':'021','goodhue':'049','jackson':'063',
 'nobles':'105','sherburne':'141','carver':'019','itasca':'061','ramsey':'123',
-'winona':'169'}
-
-MISSISSIPPI_COUNTY = {'washington':'151','perry':'111','choctaw':'019','itawamba':'057','carroll':'015','grenada':'043',
+'winona':'169'},
+          'MISSISSIPPI':{'washington':'151','perry':'111','choctaw':'019','itawamba':'057','carroll':'015','grenada':'043',
 'jefferson':'063','greene':'041','marshall':'093','quitman':'119','bolivar':'011',
 'lamar':'073','lee':'081','pike':'113','tallahatchie':'135','smith':'129',
 'stone':'131','warren':'149','clarke':'023','kemper':'069','montgomery':'097',
@@ -61,9 +59,8 @@ MISSISSIPPI_COUNTY = {'washington':'151','perry':'111','choctaw':'019','itawamba
 'tishomingo':'141','wayne':'153','madison':'089','marion':'091','prentiss':'117',
 'jackson':'059','tunica':'143','claiborne':'021','lauderdale':'075','simpson':'127',
 'attala':'007','coahoma':'027','walthall':'147','pontotoc':'115','alcorn':'003',
-'desoto':'033'}
-
-MISSOURI_COUNTY = {'saline':'195','madison':'123','wright':'229','vernon':'217','nodaway':'147','chariton':'041',
+'desoto':'033'},
+          'MISSOURI':{'saline':'195','madison':'123','wright':'229','vernon':'217','nodaway':'147','chariton':'041',
 'grundy':'079','morgan':'141','wayne':'223','bollinger':'017','cape girardeau':'031',
 'shelby':'205','webster':'225','atchison':'005','bates':'013','benton':'015',
 'carter':'035','dade':'057','linn':'115','howell':'091','johnson':'101',
@@ -85,9 +82,8 @@ MISSOURI_COUNTY = {'saline':'195','madison':'123','wright':'229','vernon':'217',
 'washington':'221','dekalb':'063','lafayette':'107','schuyler':'197','camden':'029',
 'jasper':'097','mcdonald':'119','polk':'167','reynolds':'179','scott':'201',
 'barton':'011','cole':'051','gasconade':'073','macon':'121','pemiscot':'155',
-'shannon':'203','douglas':'067','henry':'083','lawrence':'109'}
-
-MONTANA_COUNTY = {'custer':'017','hill':'041','powder river':'075','park':'067','roosevelt':'085','blaine':'005',
+'shannon':'203','douglas':'067','henry':'083','lawrence':'109'},
+          'MONTANA':{'custer':'017','hill':'041','powder river':'075','park':'067','roosevelt':'085','blaine':'005',
 'liberty':'051','richland':'083','teton':'099','toole':'101','fallon':'025',
 'daniels':'019','judith basin':'045','silver bow':'093','deer lodge':'023','jefferson':'043',
 'mccone':'055','wheatland':'107','rosebud':'087','carter':'011','dawson':'021',
@@ -98,9 +94,8 @@ MONTANA_COUNTY = {'custer':'017','hill':'041','powder river':'075','park':'067',
 'glacier':'035','golden valley':'037','stillwater':'095','granite':'039','madison':'057',
 'sheridan':'091','big horn':'003','garfield':'033','lewis and clark':'049','missoula':'063',
 'cascade':'013','powell':'077','gallatin':'031','beaverhead':'001','musselshell':'065',
-}
-
-NEBRASKA_COUNTY = {'adams':'001','lancaster':'109','boone':'011','rock':'149','banner':'007','sherman':'163',
+},
+          'NEBRASKA':{'adams':'001','lancaster':'109','boone':'011','rock':'149','banner':'007','sherman':'163',
 'richardson':'147','howard':'093','holt':'089','furnas':'065','gosper':'073',
 'saline':'151','sarpy':'153','thurston':'173','washington':'177','boyd':'015',
 'cherry':'031','dodge':'053','fillmore':'059','garden':'069','hooker':'091',
@@ -118,31 +113,26 @@ NEBRASKA_COUNTY = {'adams':'001','lancaster':'109','boone':'011','rock':'149','b
 'scotts bluff':'157','kimball':'105','merrick':'121','burt':'021','cuming':'039',
 'grant':'075','hayes':'085','cedar':'027','johnson':'097','garfield':'071',
 'pawnee':'133','wheeler':'183','york':'185','colfax':'037','logan':'113',
-'polk':'143','brown':'017'}
-
-NEVADA_COUNTY = {'churchill':'001','douglas':'005','pershing':'027','esmeralda':'009','humboldt':'013','mineral':'021',
+'polk':'143','brown':'017'},
+          'NEVADA':{'churchill':'001','douglas':'005','pershing':'027','esmeralda':'009','humboldt':'013','mineral':'021',
 'white pine':'033','elko':'007','lincoln':'017','nye':'023','storey':'029',
 'washoe':'031','clark':'003','carson city':'510','lyon':'019','lander':'015',
-'eureka':'011'}
-
-NEW_HAMPSHIRE_COUNTY = {'cheshire':'005','merrimack':'013','grafton':'009','rockingham':'015','belknap':'001','sullivan':'019',
-'hillsborough':'011','strafford':'017','coos':'007','carroll':'003'}
-
-NEW_JERSEY_COUNTY = {'monmouth':'025','sussex':'037','cumberland':'011','essex':'013','ocean':'029','gloucester':'015',
+'eureka':'011'},
+          'NEW HAMPSHIRE':{'cheshire':'005','merrimack':'013','grafton':'009','rockingham':'015','belknap':'001','sullivan':'019',
+'hillsborough':'011','strafford':'017','coos':'007','carroll':'003'},
+          'NEW JERSEY':{'monmouth':'025','sussex':'037','cumberland':'011','essex':'013','ocean':'029','gloucester':'015',
 'salem':'033','passaic':'031','camden':'007','bergen':'003','warren':'041',
 'hudson':'017','burlington':'005','morris':'027','mercer':'021','somerset':'035',
 'atlantic':'001','middlesex':'023','cape may':'009','union':'039','hunterdon':'019',
-}
-
-NEW_MEXICO_COUNTY = {'rio arriba':'039','san miguel':'047','torrance':'057','otero':'035','cibola':'006','guadalupe':'019',
+},
+          'NEW MEXICO':{'rio arriba':'039','san miguel':'047','torrance':'057','otero':'035','cibola':'006','guadalupe':'019',
 'catron':'003','grant':'017','luna':'029','mckinley':'031','taos':'055',
 'colfax':'007','eddy':'015','mora':'033','quay':'037','lincoln':'027',
 'lea':'025','santa fe':'049','sierra':'051','socorro':'053','dona ana':'013',
 'los alamos':'028','valencia':'061','bernalillo':'001','de baca':'011','hidalgo':'023',
 'sandoval':'043','curry':'009','harding':'021','san juan':'045','chaves':'005',
-'union':'059','roosevelt':'041'}
-
-NEW_YORK_COUNTY = {'schoharie':'095','onondaga':'067','clinton':'019','seneca':'099','putnam':'079','franklin':'033',
+'union':'059','roosevelt':'041'},
+          'NEW YORK':{'schoharie':'095','onondaga':'067','clinton':'019','seneca':'099','putnam':'079','franklin':'033',
 'ontario':'069','queens':'081','steuben':'101','hamilton':'041','washington':'115',
 'chautauqua':'013','kings':'047','new york':'061','tioga':'107','cayuga':'011',
 'orleans':'073','saratoga':'091','rockland':'087','columbia':'021','lewis':'049',
@@ -154,9 +144,8 @@ NEW_YORK_COUNTY = {'schoharie':'095','onondaga':'067','clinton':'019','seneca':'
 'orange':'071','bronx':'005','fulton':'035','rensselaer':'083','dutchess':'027',
 'herkimer':'043','st. lawrence':'089','warren':'113','monroe':'055','ulster':'111',
 'livingston':'051','greene':'039','allegany':'003','cattaraugus':'009','schenectady':'093',
-'yates':'123'}
-
-NORTH_CAROLINA_COUNTY = {'mitchell':'121','greene':'079','chowan':'041','caldwell':'027','catawba':'035','craven':'049',
+'yates':'123'},
+          'NORTH CAROLINA':{'mitchell':'121','greene':'079','chowan':'041','caldwell':'027','catawba':'035','craven':'049',
 'edgecombe':'065','harnett':'085','henderson':'089','hyde':'095','mecklenburg':'119',
 'northampton':'131','rowan':'159','vance':'181','currituck':'053','union':'179',
 'forsyth':'067','nash':'127','bladen':'017','dare':'055','warren':'185',
@@ -175,9 +164,8 @@ NORTH_CAROLINA_COUNTY = {'mitchell':'121','greene':'079','chowan':'041','caldwel
 'alexander':'003','carteret':'031','pasquotank':'139','swain':'173','anson':'007',
 'franklin':'069','macon':'113','transylvania':'175','columbus':'047','montgomery':'123',
 'richmond':'153','surry':'171','buncombe':'021','cabarrus':'025','davidson':'057',
-'hertford':'091','pender':'141','watauga':'189','tyrrell':'177'}
-
-NORTH_DAKOTA_COUNTY = {'burke':'013','mountrail':'061','williams':'105','billings':'007','kidder':'043','cavalier':'019',
+'hertford':'091','pender':'141','watauga':'189','tyrrell':'177'},
+          'NORTH DAKOTA':{'burke':'013','mountrail':'061','williams':'105','billings':'007','kidder':'043','cavalier':'019',
 'grant':'037','pembina':'067','steele':'091','hettinger':'041','lamoure':'045',
 'morton':'059','cass':'017','dunn':'025','emmons':'029','mcintosh':'051',
 'nelson':'063','richland':'077','rolette':'079','walsh':'099','adams':'001',
@@ -187,9 +175,8 @@ NORTH_DAKOTA_COUNTY = {'burke':'013','mountrail':'061','williams':'105','billing
 'divide':'023','foster':'031','sargent':'081','slope':'087','stark':'089',
 'traill':'097','dickey':'021','ward':'101','mchenry':'049','benson':'005',
 'renville':'075','burleigh':'015','oliver':'065','ramsey':'071','griggs':'039',
-'sheridan':'083','wells':'103'}
-
-OHIO_COUNTY = {'gallia':'053','huron':'077','athens':'009','adams':'001','medina':'103','union':'159',
+'sheridan':'083','wells':'103'},
+          'OHIO':{'gallia':'053','huron':'077','athens':'009','adams':'001','medina':'103','union':'159',
 'champaign':'021','paulding':'125','greene':'057','franklin':'049','marion':'101',
 'morgan':'115','wayne':'169','wyandot':'175','butler':'017','harrison':'067',
 'knox':'083','richland':'139','vinton':'163','hancock':'063','fairfield':'045',
@@ -206,9 +193,8 @@ OHIO_COUNTY = {'gallia':'053','huron':'077','athens':'009','adams':'001','medina
 'ashland':'005','mahoning':'099','scioto':'145','meigs':'105','pike':'131',
 'hamilton':'061','erie':'043','lawrence':'087','tuscarawas':'157','brown':'015',
 'licking':'089','carroll':'019','clermont':'025','highland':'071','portage':'133',
-'belmont':'013','perry':'127'}
-
-OKLAHOMA_COUNTY = {'adair':'001','stephens':'137','cimarron':'025','carter':'019','grant':'053','greer':'055',
+'belmont':'013','perry':'127'},
+          'OKLAHOMA':{'adair':'001','stephens':'137','cimarron':'025','carter':'019','grant':'053','greer':'055',
 'mcclain':'087','mcintosh':'091','murray':'099','noble':'103','ottawa':'115',
 'sequoyah':'135','wagoner':'145','woods':'151','caddo':'015','muskogee':'101',
 'okfuskee':'107','bryan':'013','harper':'059','kay':'071','craig':'035',
@@ -223,18 +209,16 @@ OKLAHOMA_COUNTY = {'adair':'001','stephens':'137','cimarron':'025','carter':'019
 'nowata':'105','rogers':'131','alfalfa':'003','cleveland':'027','atoka':'005',
 'dewey':'043','logan':'083','washington':'147','haskell':'061','okmulgee':'111',
 'jefferson':'067','garvin':'049','pontotoc':'123','hughes':'063','comanche':'031',
-'pawnee':'117'}
-
-OREGON_COUNTY = {'marion':'047','jackson':'029','grant':'023','jefferson':'031','clackamas':'005','linn':'043',
+'pawnee':'117'},
+          'OREGON':{'marion':'047','jackson':'029','grant':'023','jefferson':'031','clackamas':'005','linn':'043',
 'tillamook':'057','baker':'001','josephine':'033','umatilla':'059','lincoln':'041',
 'columbia':'009','sherman':'055','wasco':'065','lane':'039','malheur':'045',
 'washington':'067','morrow':'049','clatsop':'007','curry':'015','gilliam':'021',
 'lake':'037','union':'061','douglas':'019','polk':'053','deschutes':'017',
 'yamhill':'071','klamath':'035','benton':'003','crook':'013','harney':'025',
 'wallowa':'063','wheeler':'069','coos':'011','hood river':'027','multnomah':'051',
-}
-
-PENNSYLVANIA_COUNTY = {'delaware':'045','union':'119','wayne':'127','dauphin':'043','westmoreland':'129','forest':'053',
+},
+          'PENNSYLVANIA':{'delaware':'045','union':'119','wayne':'127','dauphin':'043','westmoreland':'129','forest':'053',
 'monroe':'089','philadelphia':'101','blair':'013','cambria':'021','berks':'011',
 'huntingdon':'061','lawrence':'073','mifflin':'087','cumberland':'041','allegheny':'003',
 'snyder':'109','susquehanna':'115','crawford':'039','erie':'049','fulton':'057',
@@ -247,11 +231,9 @@ PENNSYLVANIA_COUNTY = {'delaware':'045','union':'119','wayne':'127','dauphin':'0
 'bedford':'009','somerset':'111','york':'133','bradford':'015','chester':'029',
 'indiana':'063','washington':'125','pike':'103','lehigh':'077','clarion':'031',
 'clearfield':'033','lycoming':'081','warren':'123','elk':'047','mercer':'085',
-'sullivan':'113'}
-
-RHODE_ISLAND_COUNTY = {'providence':'007','bristol':'001','newport':'005','kent':'003','washington':'009'}
-
-SOUTH_CAROLINA_COUNTY = {'aiken':'003','newberry':'071','edgefield':'037','clarendon':'027','colleton':'029','sumter':'085',
+'sullivan':'113'},
+          'RHODE ISLAND':{'providence':'007','bristol':'001','newport':'005','kent':'003','washington':'009'},
+          'SOUTH CAROLINA':{'aiken':'003','newberry':'071','edgefield':'037','clarendon':'027','colleton':'029','sumter':'085',
 'lexington':'063','barnwell':'011','york':'091','berkeley':'015','darlington':'031',
 'georgetown':'043','anderson':'007','chesterfield':'025','greenwood':'047','horry':'051',
 'kershaw':'055','orangeburg':'075','abbeville':'001','bamberg':'009','calhoun':'017',
@@ -260,9 +242,8 @@ SOUTH_CAROLINA_COUNTY = {'aiken':'003','newberry':'071','edgefield':'037','clare
 'pickens':'077','union':'087','williamsburg':'089','oconee':'073','allendale':'005',
 'chester':'023','marion':'067','charleston':'019','marlboro':'069','cherokee':'021',
 'jasper':'053','lee':'061','spartanburg':'083','beaufort':'013','saluda':'081',
-}
-
-SOUTH_DAKOTA_COUNTY = {'aurora':'003','grant':'051','tripp':'123','jackson':'071','minnehaha':'099','custer':'033',
+},
+          'SOUTH DAKOTA':{'aurora':'003','grant':'051','tripp':'123','jackson':'071','minnehaha':'099','custer':'033',
 'hyde':'069','clark':'025','faulk':'049','kingsbury':'077','walworth':'129',
 'clay':'027','day':'037','douglas':'043','harding':'063','mcpherson':'089',
 'roberts':'109','sully':'119','lincoln':'083','lake':'079','lawrence':'081',
@@ -275,9 +256,8 @@ SOUTH_DAKOTA_COUNTY = {'aurora':'003','grant':'051','tripp':'123','jackson':'071
 'hand':'059','yankton':'135','beadle':'005','davison':'035','jerauld':'073',
 'stanley':'117','potter':'107','charles mix':'023','marshall':'091','moody':'101',
 'todd':'121','lyman':'085','spink':'115','brookings':'011','hamlin':'057',
-}
-
-TENNESSEE_COUNTY = {'maury':'119','union':'173','montgomery':'125','dickson':'043','morgan':'129','grundy':'061',
+},
+          'TENNESSEE':{'maury':'119','union':'173','montgomery':'125','dickson':'043','morgan':'129','grundy':'061',
 'monroe':'123','henry':'079','cocke':'029','crockett':'033','dekalb':'041',
 'lake':'095','knox':'093','lewis':'101','mcminn':'107','marshall':'117',
 'obion':'131','rhea':'143','scott':'151','tipton':'167','anderson':'001',
@@ -295,9 +275,8 @@ TENNESSEE_COUNTY = {'maury':'119','union':'173','montgomery':'125','dickson':'04
 'bledsoe':'007','coffee':'031','hawkins':'073','macon':'111','robertson':'147',
 'cheatham':'021','giles':'055','madison':'113','pickett':'137','wayne':'181',
 'bedford':'003','cumberland':'035','claiborne':'025','humphreys':'085','putnam':'141',
-'stewart':'161','decatur':'039','mcnairy':'109','bradley':'011'}
-
-TEXAS_COUNTY = {'austin':'015','kenedy':'261','nueces':'355','colorado':'089','san patricio':'409','rains':'379',
+'stewart':'161','decatur':'039','mcnairy':'109','bradley':'011'},
+          'TEXAS':{'austin':'015','kenedy':'261','nueces':'355','colorado':'089','san patricio':'409','rains':'379',
 'randall':'381','real':'385','san saba':'411','schleicher':'413','sterling':'431',
 'zavala':'507','calhoun':'057','carson':'065','foard':'155','freestone':'161',
 'goliad':'175','hamilton':'193','hardeman':'197','mitchell':'335','briscoe':'045',
@@ -347,20 +326,17 @@ TEXAS_COUNTY = {'austin':'015','kenedy':'261','nueces':'355','colorado':'089','s
 'bandera':'019','robertson':'395','taylor':'441','trinity':'455','cochran':'079',
 'comal':'091','houston':'225','potter':'375','scurry':'415','crane':'103',
 'stonewall':'433','brown':'049','bee':'025','mcculloch':'307','lee':'287',
-'ellis':'139','kerr':'265','falls':'145'}
-
-UTAH_COUNTY = {'millard':'027','washington':'053','kane':'025','grand':'019','rich':'033','wasatch':'051',
+'ellis':'139','kerr':'265','falls':'145'},
+          'UTAH':{'millard':'027','washington':'053','kane':'025','grand':'019','rich':'033','wasatch':'051',
 'box elder':'003','iron':'021','sevier':'041','weber':'057','duchesne':'013',
 'san juan':'037','salt lake':'035','uintah':'047','daggett':'009','davis':'011',
 'wayne':'055','carbon':'007','emery':'015','morgan':'029','cache':'005',
 'garfield':'017','juab':'023','tooele':'045','summit':'043','piute':'031',
-'beaver':'001','sanpete':'039','utah':'049'}
-
-VERMONT_COUNTY = {'rutland':'021','orleans':'019','grand isle':'013','orange':'017','chittenden':'007','lamoille':'015',
+'beaver':'001','sanpete':'039','utah':'049'},
+          'VERMONT':{'rutland':'021','orleans':'019','grand isle':'013','orange':'017','chittenden':'007','lamoille':'015',
 'windsor':'027','caledonia':'005','windham':'025','addison':'001','washington':'023',
-'franklin':'011','bennington':'003','essex':'009'}
-
-VIRGINIA_COUNTY = {'tazewell':'185','falls church city':'610','manassas park city':'685','poquoson city':'735','sussex':'183','waynesboro city':'820',
+'franklin':'011','bennington':'003','essex':'009'},
+          'VIRGINIA':{'tazewell':'185','falls church city':'610','manassas park city':'685','poquoson city':'735','sussex':'183','waynesboro city':'820',
 'roanoke city':'770','salem city':'775','norfolk city':'710','charlotte':'037','fairfax':'059',
 'greensville':'081','james city':'095','russell':'167','smyth':'173','lexington city':'678',
 'campbell':'031','henry':'089','king george':'099','lancaster':'103','lee':'105',
@@ -386,9 +362,8 @@ VIRGINIA_COUNTY = {'tazewell':'185','falls church city':'610','manassas park cit
 'covington city':'580','virginia beach city':'810','galax city':'640','westmoreland':'193','pulaski':'155',
 'danville city':'590','amherst':'009','bath':'017','newport news city':'700','lynchburg city':'680',
 'martinsville city':'690','essex':'057','staunton city':'790','radford city':'750','craig':'045',
-'giles':'071','rappahannock':'157'}
-
-WEST_VIRGINIA_COUNTY = {'harrison':'033','ohio':'069','calhoun':'013','morgan':'065','raleigh':'081','braxton':'007',
+'giles':'071','rappahannock':'157'},
+          'WEST VIRGINIA':{'harrison':'033','ohio':'069','calhoun':'013','morgan':'065','raleigh':'081','braxton':'007',
 'barbour':'001','mcdowell':'047','wayne':'099','wyoming':'109','jackson':'035',
 'mercer':'055','upshur':'097','webster':'101','berkeley':'003','fayette':'019',
 'grant':'023','hampshire':'027','summers':'089','brooke':'009','doddridge':'017',
@@ -398,18 +373,16 @@ WEST_VIRGINIA_COUNTY = {'harrison':'033','ohio':'069','calhoun':'013','morgan':'
 'monongalia':'061','monroe':'063','wetzel':'103','cabell':'011','kanawha':'039',
 'pendleton':'071','preston':'077','ritchie':'085','lincoln':'043','putnam':'079',
 'boone':'005','marshall':'051','tucker':'093','pleasants':'073','roane':'087',
-'wood':'107','mason':'053','jefferson':'037','logan':'045'}
-
-WASHINGTON_COUNTY = {'kitsap':'035','king':'033','pend oreille':'051','san juan':'055','whitman':'075','yakima':'077',
+'wood':'107','mason':'053','jefferson':'037','logan':'045'},
+          'WASHINGTON':{'kitsap':'035','king':'033','pend oreille':'051','san juan':'055','whitman':'075','yakima':'077',
 'cowlitz':'015','ferry':'019','lewis':'041','grays harbor':'027','island':'029',
 'wahkiakum':'069','franklin':'021','grant':'025','whatcom':'073','okanogan':'047',
 'kittitas':'037','benton':'005','columbia':'013','asotin':'003','garfield':'023',
 'mason':'045','stevens':'065','spokane':'063','chelan':'007','jefferson':'031',
 'pacific':'049','skamania':'059','clallam':'009','klickitat':'039','douglas':'017',
 'pierce':'053','walla walla':'071','snohomish':'061','thurston':'067','clark':'011',
-'adams':'001','skagit':'057','lincoln':'043'}
-
-WISCONSIN_COUNTY = {'rock':'105','waushara':'137','adams':'001','bayfield':'007','lafayette':'065','monroe':'081',
+'adams':'001','skagit':'057','lincoln':'043'},
+          'WISCONSIN':{'rock':'105','waushara':'137','adams':'001','bayfield':'007','lafayette':'065','monroe':'081',
 'pierce':'093','wood':'141','ashland':'003','calumet':'015','florence':'037',
 'clark':'019','jefferson':'055','kenosha':'059','iron':'051','st. croix':'109',
 'oconto':'083','lincoln':'069','waupaca':'135','barron':'005','sawyer':'113',
@@ -423,26 +396,22 @@ WISCONSIN_COUNTY = {'rock':'105','waushara':'137','adams':'001','bayfield':'007'
 'dunn':'033','green':'045','shawano':'115','menominee':'078','buffalo':'011',
 'la crosse':'063','eau claire':'035','polk':'095','waukesha':'133','vilas':'125',
 'juneau':'057','washington':'131','dane':'025','fond du lac':'039','pepin':'091',
-'portage':'097'}
-
-WYOMING_COUNTY = {'campbell':'005','johnson':'019','natrona':'025','converse':'009','niobrara':'027','teton':'039',
+'portage':'097'},
+          'WYOMING':{'campbell':'005','johnson':'019','natrona':'025','converse':'009','niobrara':'027','teton':'039',
 'sweetwater':'037','platte':'031','park':'029','sheridan':'033','big horn':'003',
 'crook':'011','albany':'001','carbon':'007','goshen':'015','uinta':'041',
 'washakie':'043','hot springs':'017','fremont':'013','sublette':'035','weston':'045',
-'lincoln':'023','laramie':'021'}
-
-ALASKA_COUNTY = {'aleutians west census area':'016','denali borough':'068','kenai peninsula borough':'122','bristol bay borough':'060','kodiak island borough':'150','northwest arctic borough':'188',
+'lincoln':'023','laramie':'021'},
+          'ALASKA':{'aleutians west census area':'016','denali borough':'068','kenai peninsula borough':'122','bristol bay borough':'060','kodiak island borough':'150','northwest arctic borough':'188',
 'bethel census area':'050','north slope borough':'185','sitka city and borough':'220','fairbanks north star borough':'090','ketchikan gateway borough':'130',
 'matanuska-susitna borough':'170','nome census area':'180','dillingham census area':'070','haines borough':'100','yakutat city and borough':'282',
 'juneau city and borough':'110','lake and peninsula borough':'164','southeast fairbanks census area':'240','yukon-koyukuk census area':'290','anchorage municipality':'020',
 'aleutians east borough':'013','skagway municipality':'230','prince of wales-hyder census area':'198','petersburg borough':'195','kusilvak census area':'158',
-'valdez-cordova census area':'261','hoonah-angoon census area':'105','wrangell city and borough':'275'}
-
-ARIZONA_COUNTY = {'maricopa':'013','graham':'009','santa cruz':'023','la paz':'012','mohave':'015','coconino':'005',
+'valdez-cordova census area':'261','hoonah-angoon census area':'105','wrangell city and borough':'275'},
+          'ARIZONA':{'maricopa':'013','graham':'009','santa cruz':'023','la paz':'012','mohave':'015','coconino':'005',
 'yuma':'027','greenlee':'011','pinal':'021','pima':'019','gila':'007',
-'cochise':'003','apache':'001','yavapai':'025','navajo':'017'}
-
-ARKANSAS_COUNTY = {'st. francis':'123','white':'145','nevada':'099','cross':'037','drew':'043','columbia':'027',
+'cochise':'003','apache':'001','yavapai':'025','navajo':'017'},
+          'ARKANSAS':{'st. francis':'123','white':'145','nevada':'099','cross':'037','drew':'043','columbia':'027',
 'saline':'125','van buren':'141','izard':'065','lincoln':'079','logan':'083',
 'crittenden':'035','franklin':'047','pike':'109','jefferson':'069','montgomery':'097',
 'scott':'127','sebastian':'131','benton':'007','chicot':'017','johnson':'071',
@@ -456,9 +425,8 @@ ARKANSAS_COUNTY = {'st. francis':'123','white':'145','nevada':'099','cross':'037
 'clay':'021','dallas':'039','randolph':'121','boone':'009','independence':'063',
 'grant':'053','faulkner':'045','marion':'089','searcy':'129','crawford':'033',
 'hot spring':'059','madison':'087','howard':'061','mississippi':'093','union':'139',
-'lawrence':'075','conway':'029','arkansas':'001','lonoke':'085'}
-
-CALIFORNIA_COUNTY = {'lake':'033','mariposa':'043','yuba':'115','contra costa':'013','lassen':'035','santa barbara':'083',
+'lawrence':'075','conway':'029','arkansas':'001','lonoke':'085'},
+          'CALIFORNIA':{'lake':'033','mariposa':'043','yuba':'115','contra costa':'013','lassen':'035','santa barbara':'083',
 'sonoma':'097','imperial':'025','mono':'051','alameda':'001','sacramento':'067',
 'napa':'055','monterey':'053','sierra':'091','san diego':'073','yolo':'113',
 'humboldt':'023','alpine':'003','mendocino':'045','santa cruz':'087','los angeles':'037',
@@ -469,9 +437,8 @@ CALIFORNIA_COUNTY = {'lake':'033','mariposa':'043','yuba':'115','contra costa':'
 'inyo':'027','stanislaus':'099','tehama':'103','san benito':'069','el dorado':'017',
 'san francisco':'075','tulare':'107','nevada':'057','madera':'039','trinity':'105',
 'san bernardino':'071','placer':'061','solano':'095','colusa':'011','kings':'031',
-'fresno':'019','ventura':'111'}
-
-COLORADO_COUNTY = {'phillips':'095','archuleta':'007','denver':'031','kiowa':'061','huerfano':'055','baca':'009',
+'fresno':'019','ventura':'111'},
+          'COLORADO':{'phillips':'095','archuleta':'007','denver':'031','kiowa':'061','huerfano':'055','baca':'009',
 'chaffee':'015','gilpin':'047','kit carson':'063','garfield':'045','gunnison':'051',
 'jefferson':'059','mineral':'079','ouray':'091','rio blanco':'103','sedgwick':'115',
 'conejos':'021','costilla':'023','adams':'001','eagle':'037','lake':'065',
@@ -483,16 +450,12 @@ COLORADO_COUNTY = {'phillips':'095','archuleta':'007','denver':'031','kiowa':'06
 'weld':'123','custer':'027','douglas':'035','la plata':'067','rio grande':'105',
 'bent':'011','san juan':'111','logan':'075','teller':'119','elbert':'039',
 'lincoln':'073','alamosa':'003','fremont':'043','montrose':'085','saguache':'109',
-'hinsdale':'053','grand':'049','otero':'089'}
-
-CONNECTICUT_COUNTY = {'new haven':'009','tolland':'013','hartford':'003','windham':'015','middlesex':'007','litchfield':'005',
-'new london':'011','fairfield':'001'}
-
-DELAWARE_COUNTY = {'new castle':'003','sussex':'005','kent':'001'}
-
-DC_COUNTY = {'district of columbia':'001'}
-
-FLORIDA_COUNTY = {'okaloosa':'091','taylor':'123','washington':'133','duval':'031','bradford':'007','brevard':'009',
+'hinsdale':'053','grand':'049','otero':'089'},
+          'CONNECTICUT':{'new haven':'009','tolland':'013','hartford':'003','windham':'015','middlesex':'007','litchfield':'005',
+'new london':'011','fairfield':'001'},
+          'DELAWARE':{'new castle':'003','sussex':'005','kent':'001'},
+          'DC':{'district of columbia':'001'},
+          'FLORIDA':{'okaloosa':'091','taylor':'123','washington':'133','duval':'031','bradford':'007','brevard':'009',
 'clay':'019','lafayette':'067','lake':'069','nassau':'089','pinellas':'103',
 'polk':'105','st. lucie':'111','glades':'043','hendry':'051','indian river':'061',
 'jackson':'063','palm beach':'099','st. johns':'109','seminole':'117','miami-dade':'086',
@@ -505,9 +468,8 @@ FLORIDA_COUNTY = {'okaloosa':'091','taylor':'123','washington':'133','duval':'03
 'hillsborough':'057','gulf':'045','osceola':'097','walton':'131','jefferson':'065',
 'hardee':'049','okeechobee':'093','gilchrist':'041','alachua':'001','charlotte':'015',
 'martin':'085','sarasota':'115','citrus':'017','santa rosa':'113','broward':'011',
-'monroe':'087'}
-
-GEORGIA_COUNTY = {'calhoun':'037','macon':'193','bleckley':'023','bibb':'021','marion':'197','schley':'249',
+'monroe':'087'},
+          'GEORGIA':{'calhoun':'037','macon':'193','bleckley':'023','bibb':'021','marion':'197','schley':'249',
 'dooly':'093','franklin':'119','effingham':'103','lamar':'171','emanuel':'107',
 'quitman':'239','jasper':'159','johnson':'167','liberty':'179','mitchell':'205',
 'seminole':'253','tift':'277','twiggs':'289','polk':'233','talbot':'263',
@@ -538,9 +500,8 @@ GEORGIA_COUNTY = {'calhoun':'037','macon':'193','bleckley':'023','bibb':'021','m
 'miller':'201','oconee':'219','henry':'151','long':'183','stephens':'257',
 'upson':'293','peach':'225','pierce':'229','screven':'251','banks':'011',
 'clay':'061','dekalb':'089','jackson':'157','lincoln':'181','appling':'001',
-'pulaski':'235','towns':'281','turner':'287'}
-
-IDAHO_COUNTY = {'washington':'087','cassia':'031','gem':'045','valley':'085','adams':'003','nez perce':'069',
+'pulaski':'235','towns':'281','turner':'287'},
+          'IDAHO':{'washington':'087','cassia':'031','gem':'045','valley':'085','adams':'003','nez perce':'069',
 'kootenai':'055','lewis':'061','butte':'023','twin falls':'083','owyhee':'073',
 'boise':'015','caribou':'029','ada':'001','bannock':'005','bingham':'011',
 'camas':'025','canyon':'027','jefferson':'051','latah':'057','payette':'075',
@@ -548,11 +509,9 @@ IDAHO_COUNTY = {'washington':'087','cassia':'031','gem':'045','valley':'085','ad
 'idaho':'049','power':'077','oneida':'071','lincoln':'063','franklin':'041',
 'jerome':'053','minidoka':'067','blaine':'013','boundary':'021','gooding':'047',
 'bear lake':'007','bonneville':'019','clearwater':'035','lemhi':'059','bonner':'017',
-'custer':'037','madison':'065','teton':'081'}
-
-HAWAII_COUNTY = {'hawaii':'001','maui':'009','kauai':'007','kalawao':'005','honolulu':'003'}
-
-ILLINOIS_COUNTY = {'jersey':'083','putnam':'155','de witt':'039','fayette':'051','lee':'103','logan':'107',
+'custer':'037','madison':'065','teton':'081'},
+          'HAWAII':{'hawaii':'001','maui':'009','kauai':'007','kalawao':'005','honolulu':'003'},
+          'ILLINOIS':{'jersey':'083','putnam':'155','de witt':'039','fayette':'051','lee':'103','logan':'107',
 'macoupin':'117','richland':'159','saline':'165','washington':'189','montgomery':'135',
 'whiteside':'195','adams':'001','clinton':'027','dekalb':'037','edwards':'047',
 'jasper':'079','jefferson':'081','will':'197','williamson':'199','douglas':'041',
@@ -572,9 +531,8 @@ ILLINOIS_COUNTY = {'jersey':'083','putnam':'155','de witt':'039','fayette':'051'
 'madison':'119','mercer':'131','alexander':'003','randolph':'157','macon':'115',
 'wayne':'191','franklin':'055','mcdonough':'109','moultrie':'139','pope':'151',
 'shelby':'173','champaign':'019','ford':'053','kendall':'093','marion':'121',
-'mason':'125'}
-
-INDIANA_COUNTY = {'monroe':'105','fountain':'045','elkhart':'039','crawford':'025','cass':'017','marion':'097',
+'mason':'125'},
+          'INDIANA':{'monroe':'105','fountain':'045','elkhart':'039','crawford':'025','cass':'017','marion':'097',
 'clay':'021','hendricks':'063','franklin':'047','grant':'053','jackson':'071',
 'howard':'067','owen':'119','randolph':'135','whitley':'183','brown':'013',
 'clinton':'023','union':'161','lawrence':'093','daviess':'027','dearborn':'029',
@@ -592,9 +550,8 @@ INDIANA_COUNTY = {'monroe':'105','fountain':'045','elkhart':'039','crawford':'02
 'henry':'065','madison':'095','pike':'125','steuben':'151','miami':'103',
 'wells':'179','delaware':'035','jefferson':'077','newton':'111','st. joseph':'141',
 'switzerland':'155','carroll':'015','huntington':'069','white':'181','jay':'075',
-'clark':'019'}
-
-IOWA_COUNTY = {'cass':'029','cherokee':'035','crawford':'047','des moines':'057','fayette':'065','harrison':'085',
+'clark':'019'},
+          'IOWA':{'cass':'029','cherokee':'035','crawford':'047','des moines':'057','fayette':'065','harrison':'085',
 'kossuth':'109','mills':'129','monona':'133','muscatine':'139','osceola':'143',
 'polk':'153','webster':'187','story':'169','woodbury':'193','black hawk':'013',
 'grundy':'075','jackson':'097','jones':'105','lee':'111','mitchell':'131',
@@ -613,9 +570,8 @@ IOWA_COUNTY = {'cass':'029','cherokee':'035','crawford':'047','des moines':'057'
 'chickasaw':'037','dickinson':'059','johnson':'103','tama':'171','franklin':'069',
 'carroll':'027','floyd':'067','louisa':'115','lyon':'119','shelby':'165',
 'henry':'087','page':'145','pottawattamie':'155','clayton':'043','buena vista':'021',
-'guthrie':'077','humboldt':'091','washington':'183'}
-
-KANSAS_COUNTY = {'smith':'183','grant':'067','kingman':'095','butler':'015','nemaha':'131','pottawatomie':'149',
+'guthrie':'077','humboldt':'091','washington':'183'},
+          'KANSAS':{'smith':'183','grant':'067','kingman':'095','butler':'015','nemaha':'131','pottawatomie':'149',
 'cherokee':'021','lincoln':'105','sumner':'191','trego':'195','wilson':'205',
 'woodson':'207','ness':'135','osborne':'141','bourbon':'011','hamilton':'075',
 'kiowa':'097','shawnee':'177','sherman':'181','thomas':'193','montgomery':'125',
@@ -635,9 +591,8 @@ KANSAS_COUNTY = {'smith':'183','grant':'067','kingman':'095','butler':'015','nem
 'anderson':'003','geary':'061','ford':'057','marshall':'117','cheyenne':'023',
 'cowley':'035','franklin':'059','jewell':'089','rice':'159','chase':'017',
 'wichita':'203','norton':'137','barton':'009','edwards':'047','rush':'165',
-'marion':'115','ottawa':'143','barber':'007','dickinson':'041'}
-
-KENTUCKY_COUNTY = {'butler':'031','edmonson':'061','harrison':'097','bracken':'023','lyon':'143','elliott':'063',
+'marion':'115','ottawa':'143','barber':'007','dickinson':'041'},
+          'KENTUCKY':{'butler':'031','edmonson':'061','harrison':'097','bracken':'023','lyon':'143','elliott':'063',
 'jefferson':'111','larue':'123','mason':'161','mercer':'167','robertson':'201',
 'russell':'207','washington':'229','ballard':'007','barren':'009','green':'087',
 'hancock':'091','martin':'159','hardin':'093','mclean':'149','ohio':'183',
@@ -660,9 +615,8 @@ KENTUCKY_COUNTY = {'butler':'031','edmonson':'061','harrison':'097','bracken':'0
 'muhlenberg':'177','adair':'001','cumberland':'057','lee':'129','lewis':'135',
 'woodford':'239','jessamine':'113','letcher':'133','mccracken':'145','whitley':'235',
 'floyd':'071','mccreary':'147','metcalfe':'169','rowan':'205','clark':'049',
-'carroll':'041','estill':'065','greenup':'089','carter':'043'}
-
-LOUISIANA_COUNTY = {'vermilion parish':'113','st. charles parish':'089','concordia parish':'029','tensas parish':'107','st. james parish':'093','grant parish':'043',
+'carroll':'041','estill':'065','greenup':'089','carter':'043'},
+          'LOUISIANA':{'vermilion parish':'113','st. charles parish':'089','concordia parish':'029','tensas parish':'107','st. james parish':'093','grant parish':'043',
 'jefferson parish':'051','bienville parish':'013','bossier parish':'015','cameron parish':'023','east feliciana parish':'037',
 'st. john the baptist parish':'095','plaquemines parish':'075','ouachita parish':'073','rapides parish':'079','washington parish':'117',
 'st. landry parish':'097','tangipahoa parish':'105','acadia parish':'001','st. mary parish':'101','west carroll parish':'123',
@@ -674,23 +628,19 @@ LOUISIANA_COUNTY = {'vermilion parish':'113','st. charles parish':'089','concord
 'allen parish':'003','madison parish':'065','lafourche parish':'057','jefferson davis parish':'053','west feliciana parish':'125',
 'beauregard parish':'011','evangeline parish':'039','lincoln parish':'061','webster parish':'119','iberville parish':'047',
 'morehouse parish':'067','terrebonne parish':'109','claiborne parish':'027','avoyelles parish':'009','pointe coupee parish':'077',
-'vernon parish':'115','sabine parish':'085','lasalle parish':'059'}
-
-MAINE_COUNTY = {'oxford':'017','waldo':'027','penobscot':'019','androscoggin':'001','aroostook':'003','cumberland':'005',
+'vernon parish':'115','sabine parish':'085','lasalle parish':'059'},
+          'MAINE':{'oxford':'017','waldo':'027','penobscot':'019','androscoggin':'001','aroostook':'003','cumberland':'005',
 'knox':'013','york':'031','franklin':'007','somerset':'025','lincoln':'015',
-'piscataquis':'021','washington':'029','sagadahoc':'023','kennebec':'011','hancock':'009'}
-
-MARYLAND_COUNTY = {'worcester':'047','baltimore city':'510','talbot':'041','harford':'025','howard':'027','anne arundel':'003',
+'piscataquis':'021','washington':'029','sagadahoc':'023','kennebec':'011','hancock':'009'},
+          'MARYLAND':{'worcester':'047','baltimore city':'510','talbot':'041','harford':'025','howard':'027','anne arundel':'003',
 'baltimore':'005','calvert':'009','garrett':'023','montgomery':'031','carroll':'013',
 'queen annes':'035','st. marys':'037','charles':'017','dorchester':'019','washington':'043',
 'wicomico':'045','cecil':'015','caroline':'011','somerset':'039','allegany':'001',
-'prince georges':'033','frederick':'021','kent':'029'}
-
-MASSACHUSETTS_COUNTY = {'suffolk':'025','barnstable':'001','dukes':'007','middlesex':'017','berkshire':'003','essex':'009',
+'prince georges':'033','frederick':'021','kent':'029'},
+          'MASSACHUSETTS':{'suffolk':'025','barnstable':'001','dukes':'007','middlesex':'017','berkshire':'003','essex':'009',
 'bristol':'005','hampden':'013','plymouth':'023','franklin':'011','norfolk':'021',
-'hampshire':'015','nantucket':'019','worcester':'027'}
-
-MICHIGAN_COUNTY = {'monroe':'115','allegan':'005','hillsdale':'059','alger':'003','oceana':'127','leelanau':'089',
+'hampshire':'015','nantucket':'019','worcester':'027'},
+          'MICHIGAN':{'monroe':'115','allegan':'005','hillsdale':'059','alger':'003','oceana':'127','leelanau':'089',
 'clare':'035','keweenaw':'083','isabella':'073','ottawa':'139','tuscola':'157',
 'alpena':'007','ionia':'067','midland':'111','berrien':'021','oscoda':'135',
 'crawford':'039','clinton':'037','gratiot':'057','huron':'063','lenawee':'091',
@@ -706,5 +656,4 @@ MICHIGAN_COUNTY = {'monroe':'115','allegan':'005','hillsdale':'059','alger':'003
 'alcona':'001','kalkaska':'079','ingham':'065','ogemaw':'129','wexford':'165',
 'dickinson':'043','menominee':'109','missaukee':'113','van buren':'159','barry':'015',
 'benzie':'019','schoolcraft':'153','grand traverse':'055','genesee':'049','livingston':'093',
-'manistee':'101','gladwin':'051'}
-
+'manistee':'101','gladwin':'051'}}

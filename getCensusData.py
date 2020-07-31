@@ -35,7 +35,7 @@ def getFipsCode(geogLev,fipsNm,dictNm=None):
     elif geogLev == 'state':
         return fips.STATE[fipsNm.lower()]
     elif geogLev == 'county':
-        return eval(f"fips.{dictNm.upper().replace(' ','_')}_COUNTY['{fipsNm.lower()}']")
+        return fips.COUNTY[dictNm.upper()][fipsNm.lower()]
 
 def getFipsName(geogLev,fipsNum,state=None):
     invDict = {}
@@ -46,12 +46,11 @@ def getFipsName(geogLev,fipsNum,state=None):
         invDict ={num:name for name,num in fips.STATE.items()}
         return invDict[fipsNum.lower()]
     elif geogLev == 'county':
-        invDict = {num:name for name,num in eval(f"fips.{state.upper()}_COUNTY.items()")}
-        print('/n',invDict,'/n')
+        invDict = {num:name for name,num in fips.COUNTY[state.upper()].items()}
         return invDict[fipsNum].capitalize()
 
 
-def ConstructGeoClauses(geoDict):
+def ConstructGeoClauses(geoDict,geoHeirarchy=None):
     '''Converts dictionary of geographies into a list of geographic query clause strings
     geogLev: the geography level for which the query is being made
     Values -> state, county, tract, block group
@@ -60,8 +59,8 @@ def ConstructGeoClauses(geoDict):
     States -> {'state':[Washington,Florida]}
     Counties -> {'county':{Washington:[Snohomish,King,Pierce],Florida:[Brevard]}}
     Tracts -> {'tract':{Washington:{Snohomish:[Tract #'s],King:[Tract #'s],Pierce:[Tract #'s]},Florida:{Brevard:[Tract #'s]}}}'''
-    GEOCODE = {'state':1,'county':2,'tract':3,r'block%20group':4}
-    INVGEOCODE = {1:'state',2:'county',3:'tract',4:r'block%20group'}
+    GEOCODE = {'state':1,'county':2,r'tract':3,r'block%20group':4} if not geoHeirarchy else geoHeirarchy
+    INVGEOCODE = {1:'state',2:'county',3:r'tract',4:r'block%20group'} if not geoHeirarchy else {y:x for x,y in geoHeirarchy.items()}
     geoClauseList = []
 
     def iterFunc(geostage,subStruct,curstage=0,state=None,subClause=None):
@@ -87,6 +86,7 @@ def ConstructGeoClauses(geoDict):
                 
                 iterFunc(geostage,subStruct1,curstage=curstage,state=thisState,subClause=subClause)
 
+
     for geogLev,subStruct in geoDict.items():
         geostage = GEOCODE[geogLev]
         iterFunc(geostage,subStruct)
@@ -100,7 +100,7 @@ def ConstructURL(fields,geo,conditional=None,year=str(dtm.now().year-2)):
 
     if conditional:
         queryURL = queryURL + fr"&{conditional}"
-
+    
     return queryURL
 
 
