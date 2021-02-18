@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Meow</title>
+		<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+		<script src="../static/CensusDataGrabber.js"></script>
+    </head>
+    <body>
+        <form action="graphs">
+            <input type="submit" value="Graph your Data!">
+        </form>
+        <form action="maps">
+            <input type="submit" value="Map your Data!">
+        </form>
+        <br><br>
+        {{ words }}
+        <br><br>
+        {{ words2 }}
+        <div>
+            <p>Here's your data:</p>
+            <button type="menu" id="download-data-button" onclick=createDownload()>Download to Excel</button>
+            {% for table in tables %}
+                {{ table|safe }}
+            {% endfor %}
+        </div>
+    </body>
+</html>
