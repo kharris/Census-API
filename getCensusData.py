@@ -4,8 +4,14 @@ from datetime import datetime as dtm
 from pathlib import Path
 
 pd.set_option('max.columns',None)
+null = None
 
 NEEDS_FIPS = ['state','county']
+geoHeirs = {"State" : ["State"],
+        "County" : ["State","County"],
+        "Tract" : ["State","County","Tract"],
+        "Block%20Group" : ["State","County","Tract","Block Group"],
+        "Congressional%20District" : ["State","Congressional District"]}
 
 def getFipsDict(dictName,queryurl):
     refFile = Path(r"C:\Users\Harriskd\Documents\Personal\Python Scripts\myMods\webapp\CensusAPI\fips.py")
@@ -41,7 +47,7 @@ def getFipsName(geogLev,fipsNum,state=None):
     invDict = {}
     
     if geogLev not in NEEDS_FIPS:
-        return fipsNm
+        return fipsNum
     elif geogLev == 'state':
         invDict ={num:name for name,num in fips.STATE.items()}
         return invDict[fipsNum.lower()]
