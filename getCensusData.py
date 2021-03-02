@@ -14,7 +14,7 @@ geoHeirs = {"State" : ["State"],
         "Congressional%20District" : ["State","Congressional District"]}
 
 def getFipsDict(dictName,queryurl):
-    refFile = Path(r"C:\Users\Harriskd\Documents\Personal\Python Scripts\myMods\webapp\CensusAPI\fips.py")
+    refFile = Path(r".\fips.py")
 
     fipsdf = ConstructDF(queryurl)
     cols = list(fipsdf.columns)
